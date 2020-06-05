@@ -6,12 +6,69 @@
     <title></title>
 </head>
 <body>
+    111
 </body>
 <script>
-    let p = new Promise((res1)=>{
-        return new Promise((res,rej)=>{
-            return 2
-        })
-    })
+document.body.addEventListener('paste', function (event) {
+    // 获取当前输入框内的文字
+    // 读取图片
+    let items = event.clipboardData && event.clipboardData.items;
+    console.log(items)
+    let file = null;
+    if (items && items.length) {
+        // 检索剪切板items
+        console.log('进入这个逻辑')
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].type.indexOf('image') !== -1) {
+                file = items[i].getAsFile();
+                break;
+            }
+        }
+    }
+    console.log(event,file)
+    // 预览图片
+    // const reader = new FileReader();
+    // reader.onload = function(event) {
+    //     // 图片内容
+    //     const imgContent = event.target.result;
+    //     // 创建img标签
+    //     let img = document.createElement('img');//创建一个img
+    //     // 获取当前base64图片信息，计算当前图片宽高以及压缩比例
+    //     let imgObj = new Image();
+    //     let imgWidth = "";
+    //     let imgHeight = "";
+    //     let scale = 1;
+    //     imgObj.src = imgContent;
+    //     imgObj.onload = function() {
+    //         // 计算img宽高
+    //         if(this.width<400){
+    //             imgWidth = this.width;
+    //             imgHeight = this.height;
+    //         }else{
+    //             // 输入框图片显示缩小10倍
+    //             imgWidth = this.width/10;
+    //             imgHeight = this.height/10;
+    //             // 图片宽度大于1920，图片压缩5倍
+    //             if(this.width>1920){
+    //                 // 真实比例缩小5倍
+    //                 scale = 5;
+    //             }
+    //         }
+    //         // 设置可编辑div中图片宽高
+    //         img.width = imgWidth;
+    //         img.height = imgHeight;
+    //         // 压缩图片，渲染页面
+    //         that.compressPic(imgContent,scale,function (newBlob,newBase) {
+    //             // 删除可编辑div中的图片名称
+    //             that.$refs.msgInputContainer.textContent = oldText;
+    //             img.src = newBase; //设置链接
+    //             // 图片渲染
+    //             that.$refs.msgInputContainer.append(img);
+    //             that.$fullScreenLoading.hide();
+    //         });
+    //     };
+    // };
+    // reader.readAsDataURL(file);
+});
 </script>
 </html>
