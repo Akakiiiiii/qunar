@@ -39,34 +39,6 @@ document.body.addEventListener('paste', function (event) {
     //     let imgWidth = "";
     //     let imgHeight = "";
     //     let scale = 1;
-    //     imgObj.src = imgContent;
-    //     imgObj.onload = function() {
-    //         // 计算img宽高
-    //         if(this.width<400){
-    //             imgWidth = this.width;
-    //             imgHeight = this.height;
-    //         }else{
-    //             // 输入框图片显示缩小10倍
-    //             imgWidth = this.width/10;
-    //             imgHeight = this.height/10;
-    //             // 图片宽度大于1920，图片压缩5倍
-    //             if(this.width>1920){
-    //                 // 真实比例缩小5倍
-    //                 scale = 5;
-    //             }
-    //         }
-    //         // 设置可编辑div中图片宽高
-    //         img.width = imgWidth;
-    //         img.height = imgHeight;
-    //         // 压缩图片，渲染页面
-    //         that.compressPic(imgContent,scale,function (newBlob,newBase) {
-    //             // 删除可编辑div中的图片名称
-    //             that.$refs.msgInputContainer.textContent = oldText;
-    //             img.src = newBase; //设置链接
-    //             // 图片渲染
-    //             that.$refs.msgInputContainer.append(img);
-    //             that.$fullScreenLoading.hide();
-    //         });
-});
+
 </script>
 </html>
