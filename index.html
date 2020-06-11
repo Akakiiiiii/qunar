@@ -13,13 +13,14 @@ document.body.addEventListener('paste', function (event) {
     // 获取当前输入框内的文字
     // 读取图片
     let items = event.clipboardData && event.clipboardData.items;
-    console.log(items)
+    console.log(items[1])
     let file = null;
     if (items && items.length) {
         // 检索剪切板items
-        console.log('进入这个逻辑')
+        
         for (let i = 0; i < items.length; i++) {
             if (items[i].type.indexOf('image') !== -1) {
+                console.log('进入这个逻辑')
                 file = items[i].getAsFile();
                 break;
             }
@@ -66,9 +67,6 @@ document.body.addEventListener('paste', function (event) {
     //             that.$refs.msgInputContainer.append(img);
     //             that.$fullScreenLoading.hide();
     //         });
-    //     };
-    // };
-    // reader.readAsDataURL(file);
 });
 </script>
 </html>
